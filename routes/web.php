@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
-    $homeContent = \App\Models\HomeContent::first();
+    $homeContent = \App\Models\HomeContent::first() ?? new \App\Models\HomeContent();
     return view('home', compact('homeContent'));
 });
 
